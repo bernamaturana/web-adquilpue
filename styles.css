@@ -1,0 +1,115 @@
+/* Diseño editorial «Programa de culto», el mismo del sistema interno.
+   Papel cálido, tinta, líneas finas y un solo acento (bermellón). Claro y oscuro automático. */
+:root {
+  --paper: #f2ecdf;
+  --ink: #141210;
+  --soft: #5f584e;
+  --hair: #cfc6b4;
+  --hot: #c0381a;
+  --on-ink: #f2ecdf;
+  --serif: 'Newsreader', Georgia, serif;
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #141210;
+    --ink: #eee7d8;
+    --soft: #9c9485;
+    --hair: #332f29;
+    --hot: #ff6a45;
+    --on-ink: #141210;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: color-mix(in srgb, var(--hot) 30%, transparent); }
+:focus-visible { outline: 2px solid var(--hot); outline-offset: 3px; }
+
+.wrap { width: 100%; max-width: 68rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+@media (min-width: 700px) { .wrap { padding-left: 2rem; padding-right: 2rem; } }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.02em; line-height: 1.05; }
+em { font-style: normal; color: var(--hot); }
+a { color: inherit; }
+
+.eyebrow {
+  font-size: 0.75rem; font-weight: 500; text-transform: uppercase;
+  letter-spacing: 0.14em; color: var(--soft);
+}
+.lede { font-family: var(--serif); font-style: italic; font-size: 1.25rem; color: var(--soft); line-height: 1.45; }
+
+/* Cabecera */
+.masthead {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--paper);
+  border-bottom: 3px double var(--ink);
+}
+.masthead-top { display: none; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--hair); }
+@media (min-width: 700px) { .masthead-top { display: flex; } }
+.masthead-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem 1.5rem; padding: 0.75rem 0; }
+.brand { font-family: var(--serif); font-size: 1.5rem; text-decoration: none; letter-spacing: -0.01em; }
+nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 1.5rem; font-size: 0.9rem; }
+nav a { text-decoration: none; color: var(--soft); padding: 0.5rem 0; }
+nav a:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hot); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+nav a.internal { color: var(--ink); border: 1px solid var(--ink); padding: 0.4rem 0.8rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; }
+nav a.internal:hover { background: var(--ink); color: var(--on-ink); text-decoration: none; }
+
+/* Portada */
+.hero { display: grid; gap: 2rem; padding-top: 2.5rem; padding-bottom: 3rem; align-items: center; }
+@media (min-width: 860px) { .hero { grid-template-columns: 1.1fr 1fr; gap: 3.5rem; padding-top: 4rem; padding-bottom: 5rem; } }
+.hero h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); margin: 0.75rem 0 1.25rem; }
+.hero-links { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; margin-top: 1.75rem; }
+.hero-photo { border: 1px solid var(--ink); }
+.hero-photo img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+
+.btn {
+  display: inline-block; text-decoration: none; background: var(--ink); color: var(--on-ink);
+  padding: 0.85rem 1.4rem; font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em;
+}
+.btn:hover { opacity: 0.85; }
+.link { color: var(--soft); text-decoration: underline; text-underline-offset: 5px; }
+.link:hover { color: var(--ink); }
+
+/* Secciones */
+section.wrap { padding-top: 3rem; padding-bottom: 3rem; border-top: 1px solid var(--ink); }
+.section-head { margin-bottom: 2rem; }
+.section-head h2 { font-size: clamp(2rem, 5vw, 3rem); margin-top: 0.5rem; }
+
+/* Horarios: lista tipo programa, sin tarjetas */
+.schedule { display: grid; gap: 0; }
+@media (min-width: 760px) { .schedule { grid-template-columns: 1fr 1fr; column-gap: 3rem; } }
+.day { border-top: 1px solid var(--hair); padding: 1.25rem 0 1.5rem; display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; align-items: baseline; }
+.day h3 { font-size: 1.6rem; }
+.day ul { list-style: none; }
+.day li { display: flex; gap: 1rem; align-items: baseline; padding: 0.25rem 0; }
+.time { font-family: var(--serif); font-size: 1.35rem; color: var(--hot); min-width: 3.6rem; font-variant-numeric: lining-nums tabular-nums; }
+.day small { color: var(--soft); }
+@media (max-width: 420px) { .day { grid-template-columns: 1fr; gap: 0.25rem; } }
+
+/* Ubicación */
+.location { display: grid; gap: 2rem; align-items: start; }
+@media (min-width: 860px) { .location { grid-template-columns: 1fr 1.6fr; gap: 3.5rem; } }
+.address { font-family: var(--serif); font-size: 2rem; line-height: 1.15; margin-bottom: 1rem; }
+.location-info p { margin-bottom: 1rem; }
+.map { border: 1px solid var(--ink); height: 22rem; }
+.map iframe { width: 100%; height: 100%; border: 0; display: block; }
+@media (prefers-color-scheme: dark) { .map iframe { filter: invert(0.92) hue-rotate(180deg) grayscale(0.4); } }
+
+/* Pie */
+footer.wrap { border-top: 3px double var(--ink); padding-top: 1.5rem; padding-bottom: 2.5rem; }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1.5rem; align-items: baseline; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
