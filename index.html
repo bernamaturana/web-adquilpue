@@ -3,103 +3,289 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asamblea de Dios Quilpué · Horarios y ubicación</title>
-  <meta name="description" content="Iglesia Asamblea de Dios en Quilpué, Chile. Horarios de reuniones y cómo llegar: Los Carrera 1563.">
-  <meta name="color-scheme" content="light dark">
+  <title>Asamblea de Dios Quilpué · Bienvenidos</title>
+  <meta name="description" content="Iglesia Asamblea de Dios en Quilpué, Chile. Reuniones los domingos 11:30 y 18:30 en Los Carrera 1563. Horarios, ministerios, transmisiones y contacto.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#7d1a28">
   <meta property="og:title" content="Asamblea de Dios Quilpué">
-  <meta property="og:description" content="Horarios de reuniones y ubicación. Los Carrera 1563, Quilpué.">
+  <meta property="og:description" content="Te esperamos los domingos 11:30 y 18:30. Los Carrera 1563, Quilpué.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="templo.jpg">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23d63f1c'/%3E%3Cpath d='M14 5h4v7h7v4h-7v11h-4V16H7v-4h7z' fill='%23f2ecdf'/%3E%3C/svg%3E">
+  <meta property="og:url" content="https://adquilpue.cl/">
+  <meta property="og:image" content="https://adquilpue.cl/templo.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%237d1a28'/%3E%3Cpath d='M14 5h4v7h7v4h-7v11h-4V16H7v-4h7z' fill='%23e9c46a'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
 
-  <header class="masthead">
-    <div class="wrap">
-      <div class="masthead-top">
-        <span class="eyebrow">Iglesia · Quilpué, Chile</span>
-        <span class="eyebrow">Los Carrera 1563</span>
-      </div>
-      <div class="masthead-bar">
-        <a class="brand" href="#inicio">Asamblea de Dios</a>
-        <nav aria-label="Principal">
-          <a href="#horarios">Horarios</a>
-          <a href="#ubicacion">Ubicación</a>
-          <a class="internal" href="https://adquilpue.jetro.cl">Acceso interno</a>
-        </nav>
-      </div>
+  <!-- Franja superior: lo primero que busca quien nos visita -->
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <p><span class="dot" aria-hidden="true"></span> <span id="proxima">Domingos 11:30 y 18:30</span></p>
+      <p class="topbar-address">Los Carrera 1563, Quilpué</p>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio" aria-label="Asamblea de Dios Quilpué, inicio">
+        <svg class="brand-mark" viewBox="0 0 40 48" aria-hidden="true">
+          <path d="M2 48V20C2 9 11 2 20 0c9 2 18 9 18 20v28z" />
+          <path class="cross" d="M18 12h4v8h8v4h-8v14h-4V24h-8v-4h8z" />
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Asamblea de Dios</span>
+          <span class="brand-place">Quilpué</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="menu-bars" aria-hidden="true"></span><span class="menu-label">Menú</span>
+      </button>
+
+      <nav id="menu" class="nav" aria-label="Principal">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#horarios">Horarios</a>
+        <a href="#ministerios">Ministerios</a>
+        <a href="#en-vivo">En vivo</a>
+        <a href="#contacto">Contacto</a>
+        <a class="btn btn-small" href="#visitanos">Visítanos</a>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <section id="inicio" class="hero wrap">
-      <div class="hero-text">
-        <p class="eyebrow">Bienvenidos</p>
-        <h1>Una comunidad de fe, <em>en casa</em></h1>
-        <p class="lede">Somos una comunidad de fe que busca glorificar a Dios y servir a nuestro prójimo en Quilpué.</p>
-        <p class="hero-links">
-          <a class="btn" href="#horarios">Ver horarios</a>
-          <a class="link" href="#ubicacion">Cómo llegar</a>
-        </p>
-      </div>
-      <figure class="hero-photo">
-        <img src="templo.jpg" width="1080" height="1080" alt="Interior del templo: escenario con sillas rojas y flores blancas, y filas de asientos frente al púlpito">
-      </figure>
-    </section>
+  <main id="contenido">
+    <!-- Portada -->
+    <section id="inicio" class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+          <p class="kicker">Iglesia evangélica pentecostal</p>
+          <h1>Bienvenidos a la <em>casa de Dios</em></h1>
+          <p class="verse">«Yo me alegré con los que me decían: A la casa de Jehová iremos.» <cite>Salmo 122:1</cite></p>
+          <p class="lede">Somos una familia de fe en Quilpué que busca glorificar a Dios, anunciar a Jesucristo y servir a nuestro prójimo. Hay un lugar para ti.</p>
 
-    <section id="horarios" class="wrap">
-      <header class="section-head">
-        <p class="eyebrow">Semana tipo</p>
-        <h2>Horarios de <em>reunión</em></h2>
-      </header>
+          <dl class="hero-facts">
+            <div><dt>Culto dominical</dt><dd>11:30 y 18:30</dd></div>
+            <div><dt>Escuela dominical</dt><dd>Domingo 10:30</dd></div>
+            <div><dt>Dirección</dt><dd>Los Carrera 1563</dd></div>
+          </dl>
 
-      <div class="schedule">
-        <article class="day">
-          <h3>Domingo</h3>
-          <ul>
-            <li><span class="time">10:30</span><span>Escuela Dominical</span></li>
-            <li><span class="time">11:30</span><span>Reunión General</span></li>
-            <li><span class="time">18:30</span><span>Reunión General</span></li>
-          </ul>
-        </article>
-        <article class="day">
-          <h3>Martes</h3>
-          <ul>
-            <li><span class="time">19:30</span><span>Reunión de Oración</span></li>
-          </ul>
-        </article>
-        <article class="day">
-          <h3>Jueves</h3>
-          <ul>
-            <li><span class="time">16:00</span><span>Reunión de Damas</span></li>
-            <li><span class="time">19:30</span><span>Estudio Bíblico <small>(por confirmar)</small></span></li>
-          </ul>
-        </article>
-        <article class="day">
-          <h3>Sábado</h3>
-          <ul>
-            <li><span class="time">18:00</span><span>Reunión de Jóvenes</span></li>
-            <li><span class="time">19:00</span><span>Reunión de Varones</span></li>
-          </ul>
-        </article>
+          <p class="actions">
+            <a class="btn" href="#visitanos">Planifica tu visita</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Los+Carrera+1563+Quilpu%C3%A9+Chile" target="_blank" rel="noopener">Cómo llegar</a>
+          </p>
+        </div>
+
+        <figure class="hero-photo">
+          <div class="arch">
+            <img src="templo.jpg" width="1080" height="1080" alt="Interior del templo: púlpito de madera con arcos, sillas de respaldo rojo en el altar, arreglos de flores blancas y rojas, y filas de asientos frente al escenario">
+          </div>
+          <figcaption>Nuestro templo en Los Carrera 1563</figcaption>
+        </figure>
       </div>
     </section>
 
-    <section id="ubicacion" class="wrap">
-      <header class="section-head">
-        <p class="eyebrow">Visítanos</p>
-        <h2>Nuestra <em>ubicación</em></h2>
-      </header>
+    <!-- Primera visita -->
+    <section id="visitanos" class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker">¿Primera vez?</p>
+          <h2>Qué esperar en tu <em>primera visita</em></h2>
+          <p class="section-lede">No necesitas conocer a nadie ni saber nada de antemano. Así es un domingo con nosotros.</p>
+        </header>
 
-      <div class="location">
+        <ol class="steps">
+          <li>
+            <h3>Al llegar</h3>
+            <p>Te recibirán en la entrada y te ayudarán a encontrar un asiento. Llega unos minutos antes para conversar con calma. <mark class="tbd">[POR COMPLETAR: ¿hay estacionamiento? ¿dónde?]</mark></p>
+          </li>
+          <li>
+            <h3>El culto</h3>
+            <p>Cantamos juntos, oramos y escuchamos la predicación de la Biblia. Dura alrededor de <mark class="tbd">[POR COMPLETAR: 1 h 30 min]</mark>. Ven como te sientas cómodo.</p>
+          </li>
+          <li>
+            <h3>Niños y familias</h3>
+            <p>Antes del culto de la mañana, a las 10:30, hay escuela dominical para todas las edades, con clases para niños. <mark class="tbd">[POR COMPLETAR: ¿hay espacio para niños durante el culto?]</mark></p>
+          </li>
+          <li>
+            <h3>Después</h3>
+            <p>Nos encantará conocerte. Si quieres oración o saber más de la iglesia, acércate a cualquier hermano o escríbenos.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Horarios -->
+    <section id="horarios" class="section section-tint">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker">Semana tipo</p>
+          <h2>Horarios de <em>reunión</em></h2>
+        </header>
+
+        <div class="schedule">
+          <article class="day" data-day="0">
+            <h3>Domingo</h3>
+            <ul>
+              <li><span class="time">10:30</span><span>Escuela dominical</span></li>
+              <li><span class="time">11:30</span><span>Culto general</span></li>
+              <li><span class="time">18:30</span><span>Culto general</span></li>
+            </ul>
+          </article>
+          <article class="day" data-day="2">
+            <h3>Martes</h3>
+            <ul>
+              <li><span class="time">19:30</span><span>Reunión de oración</span></li>
+            </ul>
+          </article>
+          <article class="day" data-day="4">
+            <h3>Jueves</h3>
+            <ul>
+              <li><span class="time">16:00</span><span>Reunión de damas</span></li>
+              <li><span class="time">19:30</span><span>Estudio bíblico <small>(por confirmar)</small></span></li>
+            </ul>
+          </article>
+          <article class="day" data-day="6">
+            <h3>Sábado</h3>
+            <ul>
+              <li><span class="time">18:00</span><span>Reunión de jóvenes</span></li>
+              <li><span class="time">19:00</span><span>Reunión de varones</span></li>
+            </ul>
+          </article>
+        </div>
+        <p class="note">Los horarios pueden cambiar en fechas especiales. Síguenos en redes para enterarte.</p>
+      </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section id="nosotros" class="section">
+      <div class="wrap about">
+        <div class="about-text">
+          <header class="section-head">
+            <p class="kicker">Quiénes somos</p>
+            <h2>Una iglesia <em>con historia</em></h2>
+          </header>
+          <p>Somos parte de las Asambleas de Dios, una familia de iglesias pentecostales presente en todo el mundo. <mark class="tbd">[POR COMPLETAR: año de fundación y una breve historia de la iglesia en Quilpué]</mark></p>
+          <p>Creemos que el evangelio transforma vidas y familias, y queremos ser una luz para nuestra ciudad.</p>
+
+          <div class="pastor">
+            <div class="pastor-photo" aria-hidden="true">
+              <svg viewBox="0 0 40 48"><path d="M2 48V20C2 9 11 2 20 0c9 2 18 9 18 20v28z"/></svg>
+            </div>
+            <div>
+              <p class="pastor-role">Pastor</p>
+              <p class="pastor-name"><mark class="tbd">[POR COMPLETAR: nombre del pastor y su esposa]</mark></p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="beliefs" aria-labelledby="creencias">
+          <h3 id="creencias">Lo que creemos</h3>
+          <ul>
+            <li><strong>La Biblia</strong> es la Palabra de Dios, inspirada y nuestra regla de fe y conducta.</li>
+            <li><strong>Un solo Dios</strong>, eternamente existente en tres personas: Padre, Hijo y Espíritu Santo.</li>
+            <li><strong>Salvación por gracia</strong>, mediante la fe en Jesucristo, que murió y resucitó por nosotros.</li>
+            <li><strong>El bautismo en el Espíritu Santo</strong>, prometido a todo creyente.</li>
+            <li><strong>La segunda venida</strong> de Cristo, nuestra esperanza bienaventurada.</li>
+          </ul>
+          <p class="beliefs-note"><mark class="tbd">[POR CONFIRMAR con el pastor]</mark></p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Ministerios -->
+    <section id="ministerios" class="section section-tint">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker">Participa</p>
+          <h2>Nuestros <em>ministerios</em></h2>
+          <p class="section-lede">Cada ministerio es una forma de crecer en la fe y de servir junto a otros.</p>
+        </header>
+
+        <div class="ministries">
+          <article class="ministry">
+            <h3>Escuela dominical</h3>
+            <p>Estudio de la Biblia por edades, para niños, jóvenes y adultos.</p>
+            <p class="when">Domingo · 10:30</p>
+          </article>
+          <article class="ministry">
+            <h3>Alabanza</h3>
+            <p>Músicos y cantantes que guían a la iglesia en la adoración cada domingo.</p>
+            <p class="when">Cultos del domingo</p>
+          </article>
+          <article class="ministry">
+            <h3>Jóvenes</h3>
+            <p>Un espacio para que los jóvenes crezcan en la fe, compartan y sirvan.</p>
+            <p class="when">Sábado · 18:00</p>
+          </article>
+          <article class="ministry">
+            <h3>Damas</h3>
+            <p>Mujeres que se reúnen para orar, estudiar la Palabra y acompañarse.</p>
+            <p class="when">Jueves · 16:00</p>
+          </article>
+          <article class="ministry">
+            <h3>Varones</h3>
+            <p>Hombres comprometidos con su fe, su familia y la iglesia.</p>
+            <p class="when">Sábado · 19:00</p>
+          </article>
+          <article class="ministry">
+            <h3>Oración</h3>
+            <p>Nos reunimos a orar por la iglesia, las familias y la ciudad.</p>
+            <p class="when">Martes · 19:30</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- En vivo y redes -->
+    <section id="en-vivo" class="section">
+      <div class="wrap live">
+        <div>
+          <header class="section-head">
+            <p class="kicker">Desde donde estés</p>
+            <h2>Cultos <em>en vivo</em></h2>
+          </header>
+          <p>Si no puedes venir, acompáñanos por internet. Transmitimos el culto del domingo <mark class="tbd">[POR COMPLETAR: ¿11:30, 18:30 o ambos?]</mark>.</p>
+        </div>
+        <ul class="socials">
+          <li><a class="social" href="#" data-tbd><span class="social-name">YouTube</span><span class="social-note">Transmisiones y predicaciones <mark class="tbd">[enlace]</mark></span></a></li>
+          <li><a class="social" href="#" data-tbd><span class="social-name">Facebook</span><span class="social-note">Noticias y transmisiones <mark class="tbd">[enlace]</mark></span></a></li>
+          <li><a class="social" href="#" data-tbd><span class="social-name">Instagram</span><span class="social-note">Fotos y actividades <mark class="tbd">[enlace]</mark></span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contacto y oración -->
+    <section id="contacto" class="section section-wine">
+      <div class="wrap contact">
+        <div>
+          <p class="kicker">Estamos para ti</p>
+          <h2>¿Necesitas <em>oración</em>?</h2>
+          <p>Escríbenos con confianza: oraremos por ti y, si quieres, un hermano de la iglesia se pondrá en contacto contigo.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-gold" href="#" data-tbd>Pedir oración por WhatsApp</a>
+          <a class="btn btn-outline-light" href="#" data-tbd>Escribir un correo</a>
+          <p class="contact-note"><mark class="tbd">[POR COMPLETAR: número de WhatsApp y correo de la iglesia]</mark></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section id="ubicacion" class="section">
+      <div class="wrap location">
         <div class="location-info">
-          <p class="address">Los Carrera 1563<br>Quilpué, Chile</p>
-          <p>Te esperamos con los brazos abiertos en cada una de nuestras reuniones.</p>
-          <p><a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Los+Carrera+1563+Quilpu%C3%A9+Chile" target="_blank" rel="noopener">Abrir en Google Maps</a></p>
+          <header class="section-head">
+            <p class="kicker">Visítanos</p>
+            <h2>Cómo <em>llegar</em></h2>
+          </header>
+          <address>Los Carrera 1563<br>Quilpué, Región de Valparaíso</address>
+          <p><mark class="tbd">[POR COMPLETAR: referencia para llegar, locomoción colectiva cercana]</mark></p>
+          <p><a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Los+Carrera+1563+Quilpu%C3%A9+Chile" target="_blank" rel="noopener">Abrir en Google Maps</a></p>
         </div>
         <div class="map">
           <iframe title="Mapa: Los Carrera 1563, Quilpué" src="https://www.google.com/maps?q=Los+Carrera+1563,+Quilpu%C3%A9,+Chile&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
@@ -108,12 +294,24 @@
     </section>
   </main>
 
-  <footer class="wrap">
-    <div class="footer-inner">
-      <span class="brand">Asamblea de Dios · Quilpué</span>
-      <span class="eyebrow">&copy; 2026 · Todos los derechos reservados</span>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-brand">Asamblea de Dios · Quilpué</p>
+        <p>Los Carrera 1563, Quilpué, Chile</p>
+      </div>
+      <div>
+        <p class="footer-title">Cultos</p>
+        <p>Domingo 11:30 y 18:30<br>Escuela dominical 10:30</p>
+      </div>
+      <div>
+        <p class="footer-title">Hermanos de la iglesia</p>
+        <p><a href="https://adquilpue.jetro.cl">Acceso interno</a></p>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>&copy; <span id="anio">2026</span> Iglesia Asamblea de Dios Quilpué</p>
     </div>
   </footer>
-
 </body>
 </html>
