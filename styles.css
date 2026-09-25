@@ -294,6 +294,8 @@ address { font-style: normal; font-family: var(--serif); font-size: 1.6rem; line
    el acomodo automático molesta al leer. */
 @media (min-width: 861px) and (prefers-reduced-motion: no-preference) {
   html { scroll-snap-type: y proximity; }
-  .hero, .section { scroll-snap-align: start; }
+  /* El primer bloque es el tope de la página (franja de la próxima reunión incluida), no la portada:
+     alinear la portada bajo el menú fijo dejaba la franja cortada. */
+  .topbar, .section { scroll-snap-align: start; }
   .site-footer { scroll-snap-align: end; }
 }
