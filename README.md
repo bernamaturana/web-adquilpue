@@ -12,8 +12,10 @@ Las cabeceras de seguridad están en `_headers`.
 
 ## Mantener al día
 - Los horarios están escritos a mano en `index.html`: deben coincidir con el horario semanal configurado en el sistema.
-- **Temporal:** «Acceso interno» apunta a `https://adquilpue.jetro.cl` (Tailscale). Al publicar el sistema, cambiarlo a
-  `https://adquilpue.jetro.cl`.
+- **Ramas:** `main` es lo publicado; `dev` es para probar. «Acceso interno» apunta a `https://adquilpue.jetro.cl` en
+  `main` y a la instancia local `https://adquilpue.jetro.cl` en `dev`. Se trabaja en `dev` y se pasa con
+  `git checkout main && git merge dev`: el enlace de `main` se conserva mientras no se edite esa línea en `dev`.
+  No traer `main` a `dev`.
 
 ## Diseño (rama `dev`, 2026-09-24)
 Tradicional y sobrio, con la paleta del templo (`templo.jpg`): bordó de las sillas y el altar (`#7d1a28`), dorado de la
