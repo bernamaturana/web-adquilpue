@@ -287,3 +287,13 @@ address { font-style: normal; font-family: var(--serif); font-size: 1.6rem; line
 .footer-brand { font-family: var(--serif); font-size: 1.35rem; color: #fff; margin-bottom: .35rem; }
 .footer-title { font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-light); margin-bottom: .35rem; }
 .footer-bottom { border-top: 1px solid rgb(255 255 255 / .12); padding-block: 1.25rem; font-size: .85rem; color: #a99b87; }
+
+/* ---------- Scroll por bloques ----------
+   «proximity»: al soltar el scroll cerca del inicio de una sección, la página se acomoda a ella; si la sección es más
+   alta que la pantalla (Lo que creemos, Ministerios) se puede leer libremente. Solo en pantallas grandes: en celular
+   el acomodo automático molesta al leer. */
+@media (min-width: 861px) and (prefers-reduced-motion: no-preference) {
+  html { scroll-snap-type: y proximity; }
+  .hero, .section { scroll-snap-align: start; }
+  .site-footer { scroll-snap-align: end; }
+}
