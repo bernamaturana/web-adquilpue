@@ -23,11 +23,8 @@ horarios y dirección visibles de entrada, «Qué esperar en tu primera visita»
 `app.js`: menú en celular, «próxima reunión» en la franja superior y el día de hoy destacado (su lista de reuniones debe
 coincidir con la sección Horarios). Sin JavaScript la página funciona igual.
 
-## Por completar (marcado en amarillo en la página: buscar `class="tbd"` y `data-tbd`)
-- Estacionamiento, duración del culto, espacio para niños durante el culto.
-- Año de fundación e historia breve; nombre del pastor y su esposa (y foto, si hay).
-- Confirmar con el pastor la lista «Lo que creemos».
-- Qué culto se transmite y enlaces de YouTube, Facebook e Instagram.
-- WhatsApp y correo de la iglesia (el botón de oración usará `https://wa.me/569XXXXXXXX?text=...`).
-- Referencias para llegar y locomoción colectiva.
-- Más fotos (fachada, congregación, actividades) para reemplazar o acompañar `templo.jpg`.
+## Pendiente
+- Más fotos (fachada, congregación, actividades) y foto del pastor.
+- «Lo que creemos» resume en palabras propias las 16 verdades fundamentales de las Asambleas de Dios
+  (texto oficial: https://ag.org/es-ES/beliefs/Statement-of-Fundamental-Truths); conviene que el pastor lo revise.
+- Correo `adquilpue@gmail.com` es temporal: actualizarlo aquí cuando cambie.
