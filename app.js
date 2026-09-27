@@ -8,10 +8,11 @@ document.documentElement.classList.add('js');
     { day: 0, time: '10:30', name: 'Escuela dominical' },
     { day: 0, time: '11:30', name: 'Culto general' },
     { day: 0, time: '18:30', name: 'Culto general' },
-    { day: 2, time: '19:30', name: 'Reunión de oración' },
+    { day: 2, time: '19:00', name: 'Reunión de oración' },
     { day: 4, time: '16:00', name: 'Reunión de damas' },
+    { day: 4, time: '19:00', name: 'Estudio bíblico' },
     { day: 6, time: '18:00', name: 'Reunión de jóvenes' },
-    { day: 6, time: '19:00', name: 'Reunión de varones' },
+    { day: 6, time: '18:00', name: 'Reunión de varones' },
   ];
   const DAYS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
 
@@ -42,8 +43,11 @@ document.documentElement.classList.add('js');
   }
   const label = document.getElementById('proxima');
   if (next && label) {
+    // Reuniones en paralelo (misma hora, salas distintas) se muestran juntas
+    const names = MEETINGS.filter((m) => m.day === next.day && m.time === next.time).map((m) => m.name);
     const when = next.offset === 0 ? 'hoy' : next.offset === 1 ? 'mañana' : `el ${DAYS[next.day]}`;
-    label.textContent = `Próxima reunión: ${next.name}, ${when} a las ${next.time}`;
+    const title = names.length > 1 ? 'Próximas reuniones' : 'Próxima reunión';
+    label.textContent = `${title}: ${names.join(' y ')}, ${when} a las ${next.time}`;
   }
 
   // Día de hoy en los horarios
