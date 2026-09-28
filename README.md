@@ -17,9 +17,14 @@ Las cabeceras de seguridad están en `_headers`.
 ## Ramas y trabajo en equipo
 | Rama | Para qué | Quién |
 |---|---|---|
-| `main` | Lo publicado en adquilpue.cl (cada push se publica) | Solo Bernabé, desde `dev` |
-| `dev` | Integración: aquí se junta y se revisa todo antes de publicar | Merge de las ramas de trabajo |
-| `ministerio/NOMBRE` | Trabajo en la página de un ministerio (p. ej. `ministerio/jovenes`) | Quien arma esa página |
+| `main` | **Producción**: lo publicado en adquilpue.cl (cada push se publica) | Solo Bernabé, desde `pruebas` |
+| `pruebas` | **Pre-producción**: lo que se va a publicar, para revisarlo antes. Hoy es copia de `main` | Solo Bernabé, desde `dev` |
+| `dev` | **Integración**: junta lo que se trabaja en paralelo | Merge de las ramas de trabajo (pull request) |
+| `ministerio/NOMBRE`, etc. | **Ramas de trabajo** (p. ej. `ministerio/jovenes`) | Quien hace ese trabajo |
+
+```
+ramas de trabajo  →  dev  →  pruebas  →  main
+```
 
 Flujo:
 1. Partir de `dev` actualizado: `git checkout dev && git pull`, luego `git checkout -b ministerio/NOMBRE`
@@ -28,10 +33,15 @@ Flujo:
    `ministerios/ministerio.css`, `app.js`, `index.html`), avisarlo en el pull request: afecta a todas las páginas.
 3. Commits pequeños y `git push`. Abrir un **pull request hacia `dev`** en GitHub; Bernabé lo revisa y lo junta.
 4. Para traer lo nuevo de `dev` a la rama: `git merge dev`.
-5. Publicar: Bernabé pasa `dev` a `main` (`git checkout main && git merge dev && git push`).
+5. Preparar una publicación: Bernabé pasa `dev` a `pruebas` (`git checkout pruebas && git merge dev && git push`)
+   y se revisa ahí (computador y celular).
+6. Publicar: pasar `pruebas` a `main` (`git checkout main && git merge pruebas && git push`).
+   `main` solo recibe desde `pruebas`; si algo falla en `pruebas`, se corrige en `dev` y se vuelve a pasar.
 
 Cloudflare Pages publica una vista previa por rama si las vistas previas están activas en el proyecto
 (`https://RAMA.PROYECTO.pages.dev`, con `/` cambiado por `-`): sirve para mostrar el avance sin tocar el sitio real.
+`pruebas` tiene así una URL fija (`pruebas.PROYECTO.pages.dev`); se le puede dar un subdominio propio (p. ej.
+`pruebas.adquilpue.cl`) en Pages → Custom domains.
 
 ## Páginas de ministerio
 En `ministerios/`: cada ministerio tiene su carpeta con su página, sus colores y sus fotos, sobre el mismo diseño del
