@@ -55,6 +55,28 @@ document.documentElement.classList.add('js');
     if (Number(el.dataset.day) === now.getDay()) el.classList.add('today');
   });
 
+  // Galería de un ministerio: la foto se abre encima de la página (sin JavaScript, el enlace abre la imagen)
+  const gallery = document.querySelector('.gallery');
+  if (gallery && typeof HTMLDialogElement === 'function') {
+    const box = document.createElement('dialog');
+    box.className = 'lightbox';
+    box.innerHTML = '<button type="button">Cerrar ✕</button><img alt=""><p></p>';
+    document.body.appendChild(box);
+    const [closeBtn, img, caption] = box.children;
+    closeBtn.addEventListener('click', () => box.close());
+    box.addEventListener('click', (e) => { if (e.target === box) box.close(); });
+    gallery.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href]');
+      const thumb = link && link.querySelector('img');
+      if (!thumb) return;
+      e.preventDefault();
+      img.src = link.href;
+      img.alt = thumb.alt;
+      caption.textContent = thumb.alt;
+      box.showModal();
+    });
+  }
+
   // Enlaces aún sin dirección real: no llevan a ninguna parte
   document.querySelectorAll('a[data-tbd]').forEach((a) => {
     a.addEventListener('click', (e) => e.preventDefault());

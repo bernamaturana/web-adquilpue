@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Página de ministerio: es también la PLANTILLA para los demás (ver ministerios/README.md).
+       Lo marcado con <mark class="tbd"> es contenido pendiente: reemplazarlo o quitar la sección. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jóvenes · Asamblea de Dios Quilpué</title>
+  <meta name="description" content="Ministerio de Jóvenes de la Asamblea de Dios Quilpué. Nos reunimos los sábados a las 18:00 en Los Carrera 1563. Actividades, fotos y redes.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#2b3990">
+  <meta property="og:title" content="Jóvenes · Asamblea de Dios Quilpué">
+  <meta property="og:description" content="Sábados 18:00 en Los Carrera 1563, Quilpué. Un espacio para crecer en la fe, compartir y servir.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://adquilpue.cl/ministerios/jovenes/">
+  <meta property="og:image" content="https://adquilpue.cl/templo.jpg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/ministerios/ministerio.css">
+  <link rel="stylesheet" href="tema.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <p><span class="dot" aria-hidden="true"></span> <span id="proxima">Domingos 11:30 y 18:30</span></p>
+      <p class="topbar-address">Los Carrera 1563, Quilpué</p>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="Asamblea de Dios Quilpué, inicio">
+        <svg class="brand-mark" viewBox="0 0 40 48" aria-hidden="true">
+          <path d="M2 48V20C2 9 11 2 20 0c9 2 18 9 18 20v28z" />
+          <path class="cross" d="M18 12h4v8h8v4h-8v14h-4V24h-8v-4h8z" />
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Asamblea de Dios</span>
+          <span class="brand-place">Quilpué</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="menu-bars" aria-hidden="true"></span><span class="menu-label">Menú</span>
+      </button>
+
+      <nav id="menu" class="nav" aria-label="Principal">
+        <a href="/#nosotros">Nosotros</a>
+        <a href="/#horarios">Horarios</a>
+        <a href="/#ministerios" aria-current="page">Ministerios</a>
+        <a href="/#en-vivo">En vivo</a>
+        <a href="/#contacto">Contacto</a>
+        <a class="btn btn-small" href="/#visitanos">Visítanos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- Portada del ministerio -->
+    <section class="m-hero">
+      <nav class="wrap crumbs" aria-label="Estás en">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/#ministerios">Ministerios</a></li>
+          <li><span aria-current="page">Jóvenes</span></li>
+        </ol>
+      </nav>
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+          <p class="kicker">Ministerio de la iglesia</p>
+          <h1>Jóvenes</h1>
+          <p class="verse">«Ninguno tenga en poco tu juventud, sino sé ejemplo de los creyentes en palabra, conducta, amor, espíritu, fe y pureza.» <cite>1 Timoteo 4:12</cite></p>
+          <p class="lede">Un espacio para que los jóvenes crezcan en la fe, compartan y sirvan. Si tienes entre <mark class="tbd">15 y 30</mark> años, este es tu lugar.</p>
+
+          <dl class="hero-facts">
+            <div><dt>Reunión</dt><dd>Sábado 18:00</dd></div>
+            <div><dt>Lugar</dt><dd>Los Carrera 1563</dd></div>
+            <div><dt>Edades</dt><dd><mark class="tbd">15 a 30 años</mark></dd></div>
+          </dl>
+
+          <p class="actions">
+            <a class="btn" href="#redes">Síguenos</a>
+            <a class="btn btn-ghost" href="#galeria">Ver fotos</a>
+          </p>
+        </div>
+
+        <figure class="hero-photo">
+          <div class="arch">
+            <!-- Con foto: <img src="fotos/portada.jpg" width="1080" height="1350" alt="Describe la foto"> -->
+            <span class="arch-empty" aria-hidden="true">J</span>
+          </div>
+          <figcaption>Jóvenes AD Quilpué</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Quiénes somos -->
+    <section id="nosotros-jovenes" class="section">
+      <div class="wrap about">
+        <div class="about-text">
+          <header class="section-head">
+            <p class="kicker">Quiénes somos</p>
+            <h2>Una generación <em>que busca a Dios</em></h2>
+          </header>
+          <p>Cada sábado nos juntamos a adorar, estudiar la Biblia y conversar sobre lo que vivimos. Tenemos nuestro propio grupo de alabanza, y también servimos en los cultos de la iglesia.</p>
+          <p><mark class="tbd">Texto a revisar con el líder de Jóvenes: historia del grupo, qué los mueve, cómo integrarse.</mark></p>
+        </div>
+
+        <aside class="pastor-card" aria-label="Cuándo nos reunimos">
+          <p class="pastor-role">Te esperamos</p>
+          <p class="pastor-name">Sábados 18:00</p>
+          <p class="pastor-note">En el templo de Av. Los Carrera 1563, a un costado del terminal de buses. Ven con un amigo.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Lo que hacemos -->
+    <section id="actividades" class="section section-tint">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker">Participa</p>
+          <h2>Lo que <em>hacemos</em></h2>
+          <p class="section-lede">Además de la reunión semanal, hay actividades durante el año. Las fechas se avisan en nuestras redes.</p>
+        </header>
+
+        <ul class="cards">
+          <li class="card">
+            <h3>Reunión de jóvenes</h3>
+            <p>Alabanza, Palabra y tiempo para compartir.</p>
+            <p class="when">Sábado · 18:00</p>
+          </li>
+          <li class="card">
+            <h3>Alabanza Jóvenes</h3>
+            <p>Nuestro grupo de músicos y cantantes. También dirige cultos generales de la iglesia.</p>
+            <p class="when">Según calendario</p>
+          </li>
+          <li class="card">
+            <h3><mark class="tbd">Campamento</mark></h3>
+            <p><mark class="tbd">Actividad de ejemplo: reemplazar por las reales (retiros, salidas, evangelismo…).</mark></p>
+            <p class="when"><mark class="tbd">Fecha</mark></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker">Momentos</p>
+          <h2>Galería <em>de fotos</em></h2>
+        </header>
+
+        <!-- Cada foto: <li><a href="fotos/NOMBRE.jpg"><img src="fotos/NOMBRE-mini.jpg" width="600" height="600" loading="lazy" alt="Qué se ve"></a></li>
+             La primera se muestra más grande. Ver ministerios/README.md (tamaños y peso). -->
+        <ul class="gallery">
+          <li><span class="photo-empty"><mark class="tbd">Foto pendiente</mark></span></li>
+          <li><span class="photo-empty"><mark class="tbd">Foto</mark></span></li>
+          <li><span class="photo-empty"><mark class="tbd">Foto</mark></span></li>
+          <li><span class="photo-empty"><mark class="tbd">Foto</mark></span></li>
+          <li><span class="photo-empty"><mark class="tbd">Foto</mark></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Redes: dejar solo las que existan -->
+    <section id="redes" class="section section-tint">
+      <div class="wrap live">
+        <div>
+          <header class="section-head">
+            <p class="kicker">Síguenos</p>
+            <h2>Jóvenes <em>en redes</em></h2>
+          </header>
+          <p>Ahí publicamos las próximas actividades, fotos y avisos de último minuto.</p>
+        </div>
+        <ul class="socials">
+          <li><a class="social" href="#" data-tbd><span class="social-name">Instagram</span><span class="social-note"><mark class="tbd">@usuario</mark></span></a></li>
+          <li><a class="social" href="https://www.youtube.com/@adquilpue" target="_blank" rel="noopener"><span class="social-name">YouTube</span><span class="social-note">Canal de la iglesia</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Líderes -->
+    <section id="lideres" class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker">Quiénes nos guían</p>
+          <h2>Nuestros <em>líderes</em></h2>
+        </header>
+        <ul class="people">
+          <li>
+            <div class="pastor-card">
+              <div class="person-photo" aria-hidden="true"><!-- <img src="fotos/lider.jpg" alt=""> --></div>
+              <p class="pastor-role">Líder de Jóvenes</p>
+              <p class="pastor-name"><mark class="tbd">Nombre</mark></p>
+            </div>
+          </li>
+          <li>
+            <div class="pastor-card">
+              <div class="person-photo" aria-hidden="true"></div>
+              <p class="pastor-role">Alabanza Jóvenes</p>
+              <p class="pastor-name">Nombre</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Invitación -->
+    <section class="section section-accent">
+      <div class="wrap contact">
+        <div>
+          <p class="kicker">Ven a conocernos</p>
+          <h2>Te esperamos <em>el sábado</em></h2>
+          <p>No necesitas conocer a nadie. Llega a las 18:00 al templo y pregunta por los jóvenes: te vamos a recibir.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-highlight" href="https://wa.me/56944420180?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20de%20los%20j%C3%B3venes" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+          <a class="btn btn-outline-light" href="https://www.google.com/maps/search/?api=1&amp;query=Los+Carrera+1563+Quilpu%C3%A9+Chile" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Otros ministerios -->
+    <section class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker">Hay más</p>
+          <h2>Otros <em>ministerios</em></h2>
+        </header>
+        <!-- Cuando un ministerio tenga su página, enlazarla aquí: /ministerios/NOMBRE/ -->
+        <ul class="other-ministries">
+          <li><a href="/#ministerios">Escuela dominical</a></li>
+          <li><a href="/#ministerios">Alabanza</a></li>
+          <li><a href="/#ministerios">Damas</a></li>
+          <li><a href="/#ministerios">Varones</a></li>
+          <li><a href="/#ministerios">Oración</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-brand">Asamblea de Dios · Quilpué</p>
+        <p>Av. Los Carrera 1563, Quilpué<br>A un costado del terminal de buses</p>
+      </div>
+      <div>
+        <p class="footer-title">Cultos</p>
+        <p>Domingo 11:30 y 18:30<br>Escuela dominical 10:30</p>
+      </div>
+      <div>
+        <p class="footer-title">Contacto</p>
+        <p><a href="https://wa.me/56944420180" target="_blank" rel="noopener">+56 9 4442 0180</a><br><a href="mailto:adquilpue@gmail.com">adquilpue@gmail.com</a></p>
+      </div>
+      <div>
+        <p class="footer-title">Hermanos de la iglesia</p>
+        <p><a href="https://adquilpue.jetro.cl">Acceso interno</a></p>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>&copy; <span id="anio">2026</span> Iglesia Asamblea de Dios Quilpué</p>
+    </div>
+  </footer>
+</body>
+</html>

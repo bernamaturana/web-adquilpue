@@ -1,0 +1,10 @@
+/* Jóvenes: colores propios. Solo se redefinen los colores con función de /styles.css; el resto del diseño es el
+   del sitio. Revisar el contraste al cambiarlos (texto normal ≥ 4.5:1 sobre el marfil #faf7f1). */
+:root {
+  --accent: #2b3990;          /* índigo: 9.4:1 sobre marfil */
+  --accent-deep: #1c2566;
+  --on-accent: #eef0ff;
+  --highlight: #b4461f;       /* naranja quemado para texto sobre claro: 5.1:1 */
+  --highlight-light: #ff9f5a; /* naranja claro sobre fondos oscuros: 6.9:1 sobre --accent-deep */
+  --highlight-hover: #ffb57f;
+}

@@ -12,18 +12,40 @@ Las cabeceras de seguridad están en `_headers`.
 
 ## Mantener al día
 - Los horarios están escritos a mano en `index.html`: deben coincidir con el horario semanal configurado en el sistema.
-- **Ramas:** `main` es lo publicado; `dev` es para probar. «Acceso interno» apunta a `https://adquilpue.jetro.cl` en
-  `main` y a la instancia local `https://adquilpue.jetro.cl` en `dev`. Se trabaja en `dev` y se pasa con
-  `git checkout main && git merge dev`: el enlace de `main` se conserva mientras no se edite esa línea en `dev`.
-  No traer `main` a `dev`.
+- «Acceso interno» apunta a `https://adquilpue.jetro.cl` en todas las ramas.
+
+## Ramas y trabajo en equipo
+| Rama | Para qué | Quién |
+|---|---|---|
+| `main` | Lo publicado en adquilpue.cl (cada push se publica) | Solo Bernabé, desde `dev` |
+| `dev` | Integración: aquí se junta y se revisa todo antes de publicar | Merge de las ramas de trabajo |
+| `ministerio/NOMBRE` | Trabajo en la página de un ministerio (p. ej. `ministerio/jovenes`) | Quien arma esa página |
+
+Flujo:
+1. Partir de `dev` actualizado: `git checkout dev && git pull`, luego `git checkout -b ministerio/NOMBRE`
+   (o `git checkout ministerio/jovenes` si ya existe).
+2. Trabajar solo dentro de `ministerios/NOMBRE/`. Si hace falta cambiar algo común (`styles.css`,
+   `ministerios/ministerio.css`, `app.js`, `index.html`), avisarlo en el pull request: afecta a todas las páginas.
+3. Commits pequeños y `git push`. Abrir un **pull request hacia `dev`** en GitHub; Bernabé lo revisa y lo junta.
+4. Para traer lo nuevo de `dev` a la rama: `git merge dev`.
+5. Publicar: Bernabé pasa `dev` a `main` (`git checkout main && git merge dev && git push`).
+
+Cloudflare Pages publica una vista previa por rama si las vistas previas están activas en el proyecto
+(`https://RAMA.PROYECTO.pages.dev`, con `/` cambiado por `-`): sirve para mostrar el avance sin tocar el sitio real.
+
+## Páginas de ministerio
+En `ministerios/`: cada ministerio tiene su carpeta con su página, sus colores y sus fotos, sobre el mismo diseño del
+sitio. Cómo funciona y cómo crear una nueva: [`ministerios/README.md`](ministerios/README.md). Jóvenes es la plantilla.
 
 ## Diseño (rama `dev`, 2026-09-24)
 Tradicional y sobrio, con la paleta del templo (`templo.jpg`): bordó de las sillas y el altar (`#7d1a28`), dorado de la
 madera del púlpito (`#e3bd62` / `#a87a26`) y marfil de los muros. Títulos en EB Garamond, texto en Source Sans 3.
 Motivo: el arco ojival de los paneles y el púlpito (marco de la foto, logo). Pensado para quien visita por primera vez:
 horarios y dirección visibles de entrada, «Qué esperar en tu primera visita», ministerios, en vivo, oración y mapa.
-`app.js`: menú en celular, «próxima reunión» en la franja superior y el día de hoy destacado (su lista de reuniones debe
-coincidir con la sección Horarios). Sin JavaScript la página funciona igual.
+`app.js`: menú en celular, «próxima reunión» en la franja superior, el día de hoy destacado (su lista de reuniones debe
+coincidir con la sección Horarios) y el visor de fotos de las galerías. Sin JavaScript la página funciona igual.
+Los colores se usan por función (`--accent`, `--highlight`…, definidos en `styles.css`), no por nombre: así una página
+de ministerio cambia su paleta redefiniendo solo esas variables.
 
 ## Pendiente
 - Más fotos (fachada, congregación, actividades) y foto del pastor.

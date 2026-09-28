@@ -1,0 +1,84 @@
+/* Páginas de ministerio: piezas propias de estas páginas. Se cargan después de /styles.css (tipografía, botones,
+   secciones, encabezado y pie son los del sitio) y antes del `tema.css` de cada ministerio, que solo cambia colores.
+   Todo usa los colores con función (--accent, --highlight…), nunca un color fijo: así cada ministerio se ve con su
+   paleta y el mismo lenguaje visual (arco ojival, ornamento bajo los títulos, tarjetas con filete, serif + sans). */
+
+/* Migas: dónde estoy dentro del sitio */
+.crumbs { font-size: .9rem; color: var(--soft); padding-top: 1.25rem; }
+.crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem; }
+.crumbs li + li::before { content: "/"; margin-right: .4rem; color: var(--line); }
+.crumbs a { color: var(--soft); }
+.crumbs a:hover { color: var(--accent); }
+.crumbs [aria-current] { color: var(--ink); font-weight: 600; }
+
+/* Portada del ministerio: misma estructura que la del sitio, con el color del ministerio de fondo suave */
+.m-hero {
+  background:
+    radial-gradient(120% 80% at 100% 0%, color-mix(in srgb, var(--highlight-light) 22%, transparent) 0%, transparent 60%),
+    linear-gradient(180deg, var(--paper) 0%, var(--ivory) 100%);
+  border-bottom: 1px solid var(--line);
+}
+.m-hero .hero-inner { padding-top: clamp(1.5rem, 4vw, 3rem); }
+.m-hero h1 { color: var(--accent); }
+
+/* Foto de portada aún sin cargar: el arco con el color del ministerio y su inicial */
+.arch-empty {
+  display: grid; place-items: center; width: 100%; height: 100%;
+  background: linear-gradient(160deg, var(--accent) 0%, var(--accent-deep) 100%);
+  color: var(--highlight-light); font-family: var(--serif); font-size: clamp(5rem, 14vw, 8rem); line-height: 1;
+}
+
+/* Tarjetas genéricas (actividades, grupos, lo que hacemos) */
+.cards { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+.card { background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 2px; padding: 1.5rem; }
+.card h3 { margin-bottom: .5rem; }
+.card p { color: var(--soft); }
+.card .when { margin-top: .9rem; font-weight: 700; font-size: .9rem; letter-spacing: .04em; color: var(--accent); }
+
+/* Galería: cuadrícula de fotos; la primera, más grande. Cada foto es un enlace a la imagen completa
+   (con JavaScript se abre encima de la página; sin él, se abre la imagen). */
+.gallery { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 1fr; gap: .75rem; }
+.gallery li:first-child { grid-column: span 2; grid-row: span 2; }
+.gallery a, .gallery .photo-empty { display: block; height: 100%; aspect-ratio: 1; border: 1px solid var(--line); padding: 5px; background: var(--paper); }
+.gallery li:first-child a, .gallery li:first-child .photo-empty { aspect-ratio: auto; }
+.gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.gallery a { overflow: hidden; }
+.gallery a:hover img { transform: scale(1.03); }
+.photo-empty {
+  display: grid !important; place-items: center; text-align: center; color: var(--soft); font-size: .85rem;
+  background:
+    repeating-linear-gradient(135deg, transparent 0 12px, color-mix(in srgb, var(--accent) 6%, transparent) 12px 13px),
+    var(--paper) !important;
+}
+@media (max-width: 760px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Visor de fotos (lo crea app.js) */
+.lightbox { border: 0; padding: 0; background: transparent; max-width: min(92vw, 1100px); max-height: 92vh; margin: auto; }
+.lightbox::backdrop { background: rgb(20 16 14 / .88); }
+.lightbox img { max-width: 100%; max-height: 82vh; margin-inline: auto; border: 5px solid var(--paper); }
+.lightbox p { color: #f3ece0; text-align: center; margin-top: .6rem; font-family: var(--serif); font-style: italic; }
+.lightbox button {
+  position: fixed; top: 1rem; right: 1rem; min-height: 2.75rem; padding: .4rem 1rem; border-radius: 3px; cursor: pointer;
+  border: 1px solid rgb(255 255 255 / .55); background: transparent; color: #fff; font: inherit; font-weight: 600;
+}
+
+/* Personas (líderes, encargados): mismas tarjetas con doble filete que la del pastor */
+.people { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+.people .pastor-card { height: 100%; }
+.person-photo { width: 6rem; aspect-ratio: 4 / 5; margin: 0 auto 1rem; -webkit-mask: var(--arch) center / 100% 100% no-repeat; mask: var(--arch) center / 100% 100% no-repeat; background: var(--tint); }
+.person-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Otros ministerios, al final de la página */
+.other-ministries { display: flex; flex-wrap: wrap; gap: .6rem; list-style: none; }
+.other-ministries a {
+  display: inline-block; padding: .45rem 1rem; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--paper); color: var(--ink); text-decoration: none; font-weight: 600; font-size: .95rem;
+}
+.other-ministries a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* El logo del encabezado es el de la iglesia: conserva sus colores en todas las páginas de ministerio */
+.brand-mark { fill: var(--wine); }
+.brand-mark .cross { fill: var(--gold-light); }
+.brand-place { color: var(--gold); }
