@@ -1,0 +1,25 @@
+# Revisa que cada pull request vaya a la rama que corresponde:
+#   ramas de trabajo → dev · dev → pruebas · pruebas → main
+# Con protección de ramas activa, marcar este check como obligatorio impide juntar un PR mal dirigido.
+name: Rama de destino
+on:
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+permissions: {}
+jobs:
+  destino:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Revisar origen y destino
+        env:
+          BASE: ${{ github.base_ref }}
+          HEAD: ${{ github.head_ref }}
+        run: |
+          echo "Pull request: $HEAD → $BASE"
+          case "$BASE" in
+            main)    [ "$HEAD" = "pruebas" ] || { echo "::error::A main solo se llega desde pruebas."; exit 1; } ;;
+            pruebas) [ "$HEAD" = "dev" ]     || { echo "::error::A pruebas solo se llega desde dev."; exit 1; } ;;
+            dev)     case "$HEAD" in main|pruebas) echo "::error::dev recibe ramas de trabajo, no $HEAD."; exit 1 ;; esac ;;
+            *)       echo "::error::Los pull request van hacia dev (o dev → pruebas → main)."; exit 1 ;;
+          esac
+          echo "Destino correcto."

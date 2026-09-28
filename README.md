@@ -38,10 +38,15 @@ Flujo:
 6. Publicar: pasar `pruebas` a `main` (`git checkout main && git merge pruebas && git push`).
    `main` solo recibe desde `pruebas`; si algo falla en `pruebas`, se corrige en `dev` y se vuelve a pasar.
 
-Cloudflare Pages publica una vista previa por rama si las vistas previas están activas en el proyecto
-(`https://RAMA.PROYECTO.pages.dev`, con `/` cambiado por `-`): sirve para mostrar el avance sin tocar el sitio real.
-`pruebas` tiene así una URL fija (`pruebas.PROYECTO.pages.dev`); se le puede dar un subdominio propio (p. ej.
-`pruebas.adquilpue.cl`) en Pages → Custom domains.
+**Dónde se ve cada rama:** `main` se publica en adquilpue.cl. `pruebas` es **solo local** (`git checkout pruebas && ./run.sh`):
+está excluida de las vistas previas de Cloudflare Pages (Settings → Builds → Branch control). `dev` y las ramas de
+trabajo también se revisan en local.
+
+**Pull requests** (carpeta `.github/`): todo PR pide la revisión de Bernabé (`CODEOWNERS`), trae una lista de
+revisión (`pull_request_template.md`) y un check revisa que vaya a la rama correcta (`workflows/ramas.yml`).
+En un repo privado con el plan gratis, GitHub no permite **exigir** estas reglas (protección de ramas): funcionan como
+aviso. Para exigirlas hay que pasar a GitHub Pro o hacer público el repositorio, y luego crear las reglas en
+Settings → Rules: `main`, `pruebas` y `dev` sin push directo, con PR aprobado por Bernabé y el check «Rama de destino».
 
 ## Páginas de ministerio
 En `ministerios/`: cada ministerio tiene su carpeta con su página, sus colores y sus fotos, sobre el mismo diseño del
