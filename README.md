@@ -35,7 +35,7 @@ Cloudflare Pages publica una vista previa por rama si las vistas previas están 
 
 ## Páginas de ministerio
 En `ministerios/`: cada ministerio tiene su carpeta con su página, sus colores y sus fotos, sobre el mismo diseño del
-sitio. Cómo funciona y cómo crear una nueva: [`ministerios/README.md`](ministerios/README.md). Jóvenes es la plantilla.
+sitio. Cómo funciona y cómo crear una nueva: [`ministerios/README.md`](ministerios/README.md). Jóvenes (`ministerios/edcquilpue/`) es la plantilla.
 
 ## Diseño (rama `dev`, 2026-09-24)
 Tradicional y sobrio, con la paleta del templo (`templo.jpg`): bordó de las sillas y el altar (`#7d1a28`), dorado de la

@@ -3,7 +3,7 @@
 Cada ministerio puede tener su propia página en `/ministerios/NOMBRE/`, con galería, redes, actividades y líderes.
 Todas comparten el **mismo lenguaje visual** del sitio y cada una tiene **sus propios colores**.
 
-La página de **Jóvenes** (`jovenes/`) es la plantilla de referencia: para un ministerio nuevo, se copia y se adapta.
+La página de **Jóvenes** (`edcquilpue/`) es la plantilla de referencia: para un ministerio nuevo, se copia y se adapta.
 
 ## Cómo está armada
 
@@ -40,7 +40,7 @@ Solo se redefinen seis colores con función:
 No usar colores fijos en el HTML ni en `ministerio.css`: siempre las variables.
 
 ## Crear la página de otro ministerio
-1. Copiar la carpeta `jovenes/` con el nombre nuevo, en minúsculas y sin tildes (`damas/`, `escuela-dominical/`).
+1. Copiar la carpeta `edcquilpue/` con el nombre nuevo, en minúsculas y sin tildes (`damas/`, `escuela-dominical/`).
 2. Cambiar los colores en `tema.css` y el `theme-color` del `<head>`.
 3. Reemplazar el contenido del `index.html`: título, descripción, versículo, datos, secciones. Lo marcado con
    `<mark class="tbd">` es contenido pendiente (se ve amarillo a propósito): reemplazarlo o **quitar la sección**.
@@ -58,5 +58,5 @@ No usar colores fijos en el HTML ni en `ministerio.css`: siempre las variables.
 - **Permiso:** publicar solo fotos con permiso de quienes aparecen; con menores de edad, con permiso de sus padres.
 
 ## Probar
-`./run.sh` en la raíz del repositorio y abrir http://localhost:8005/ministerios/jovenes/.
+`./run.sh` en la raíz del repositorio y abrir http://localhost:8005/ministerios/edcquilpue/.
 Revisar en celular (o con el modo responsive del navegador) y sin JavaScript (la página debe verse y funcionar igual).
