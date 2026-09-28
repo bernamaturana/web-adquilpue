@@ -55,6 +55,22 @@ document.documentElement.classList.add('js');
     if (Number(el.dataset.day) === now.getDay()) el.classList.add('today');
   });
 
+  // Pedido de oración: junta nombre, petición y si quiere contacto en un solo mensaje de WhatsApp
+  const prayer = document.querySelector('.prayer-form');
+  if (prayer) {
+    prayer.addEventListener('submit', (e) => {
+      const text = prayer.querySelector('#oracion-texto').value.trim();
+      if (!text) return;
+      e.preventDefault();
+      const name = prayer.querySelector('#oracion-nombre').value.trim();
+      const contact = prayer.querySelector('#oracion-contacto').checked;
+      const lines = [`Hola, ${name ? `soy ${name} y ` : ''}quisiera pedir oración por:`, text];
+      if (contact) lines.push('Me gustaría que alguien de la iglesia me contacte.');
+      window.open(`${prayer.action}?text=${encodeURIComponent(lines.join('\n\n'))}`, '_blank', 'noopener');
+      prayer.reset();
+    });
+  }
+
   // Galería de un ministerio: la foto se abre encima de la página (sin JavaScript, el enlace abre la imagen)
   const gallery = document.querySelector('.gallery');
   if (gallery && typeof HTMLDialogElement === 'function') {

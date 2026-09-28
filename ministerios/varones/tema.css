@@ -1,0 +1,10 @@
+/* Varones: colores propios (azul petróleo y cobre). Solo se redefinen los colores con función de /styles.css; el resto
+   del diseño es el del sitio. Revisar el contraste al cambiarlos (texto normal ≥ 4.5:1 sobre el marfil #faf7f1). */
+:root {
+  --accent: #1f5563;
+  --accent-deep: #133a44;
+  --on-accent: #e9f4f6;
+  --highlight: #9a4a1c;
+  --highlight-light: #f7c08f;
+  --highlight-hover: #f9d0ac;
+}

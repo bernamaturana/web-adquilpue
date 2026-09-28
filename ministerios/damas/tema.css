@@ -1,0 +1,10 @@
+/* Damas: colores propios (ciruela y rosa durazno). Solo se redefinen los colores con función de /styles.css; el resto
+   del diseño es el del sitio. Revisar el contraste al cambiarlos (texto normal ≥ 4.5:1 sobre el marfil #faf7f1). */
+:root {
+  --accent: #8a2d5c;
+  --accent-deep: #5e1d3f;
+  --on-accent: #fbeef4;
+  --highlight: #8f4f14;
+  --highlight-light: #f4b39a;
+  --highlight-hover: #f8c9b6;
+}

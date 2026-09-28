@@ -3,7 +3,18 @@
 Cada ministerio puede tener su propia página en `/ministerios/NOMBRE/`, con galería, redes, actividades y líderes.
 Todas comparten el **mismo lenguaje visual** del sitio y cada una tiene **sus propios colores**.
 
-La página de **Jóvenes** (`edcquilpue/`) es la plantilla de referencia: para un ministerio nuevo, se copia y se adapta.
+Todas parten de la misma plantilla, con el contenido en placeholders (amarillo) para completar:
+
+| Ministerio | Carpeta / URL | Colores | Rama de trabajo |
+|---|---|---|---|
+| Jóvenes | `edcquilpue/` | índigo y naranja | `ministerio/jovenes` |
+| Escuela dominical | `escuela-dominical/` | verde bosque y amarillo trigo | `ministerio/escuela-dominical` |
+| Alabanza | `alabanza/` | morado y dorado | `ministerio/alabanza` |
+| Damas | `damas/` | ciruela y rosa durazno | `ministerio/damas` |
+| Varones | `varones/` | azul petróleo y cobre | `ministerio/varones` |
+
+La reunión de oración no es un ministerio: el pedido de oración es un formulario en la portada (sección Contacto),
+que arma un mensaje de WhatsApp a la iglesia.
 
 ## Cómo está armada
 
@@ -40,12 +51,12 @@ Solo se redefinen seis colores con función:
 No usar colores fijos en el HTML ni en `ministerio.css`: siempre las variables.
 
 ## Crear la página de otro ministerio
-1. Copiar la carpeta `edcquilpue/` con el nombre nuevo, en minúsculas y sin tildes (`damas/`, `escuela-dominical/`).
+1. Copiar la carpeta de cualquier ministerio (p. ej. `damas/`) con el nombre nuevo, en minúsculas y sin tildes (`damas/`, `escuela-dominical/`).
 2. Cambiar los colores en `tema.css` y el `theme-color` del `<head>`.
 3. Reemplazar el contenido del `index.html`: título, descripción, versículo, datos, secciones. Lo marcado con
    `<mark class="tbd">` es contenido pendiente (se ve amarillo a propósito): reemplazarlo o **quitar la sección**.
 4. Redes: dejar solo las que existan.
-5. En la portada del sitio (`/index.html`, sección Ministerios), convertir la tarjeta en enlace como la de Jóvenes
+5. En la portada del sitio (`/index.html`, sección Ministerios), agregar su tarjeta como las demás
    (`class="ministry has-page"`, enlace en el `<h3>` y «Conoce más →»), y agregarlo en «Otros ministerios» de las demás páginas.
 
 ## Fotos

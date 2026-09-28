@@ -1,0 +1,10 @@
+/* Alabanza: colores propios (morado y dorado). Solo se redefinen los colores con función de /styles.css; el resto
+   del diseño es el del sitio. Revisar el contraste al cambiarlos (texto normal ≥ 4.5:1 sobre el marfil #faf7f1). */
+:root {
+  --accent: #5b2a86;
+  --accent-deep: #3d1b5c;
+  --on-accent: #f3ecfa;
+  --highlight: #9a5b00;
+  --highlight-light: #f0b949;
+  --highlight-hover: #f5cd74;
+}

@@ -35,7 +35,10 @@ Cloudflare Pages publica una vista previa por rama si las vistas previas están 
 
 ## Páginas de ministerio
 En `ministerios/`: cada ministerio tiene su carpeta con su página, sus colores y sus fotos, sobre el mismo diseño del
-sitio. Cómo funciona y cómo crear una nueva: [`ministerios/README.md`](ministerios/README.md). Jóvenes (`ministerios/edcquilpue/`) es la plantilla.
+sitio. Hay páginas para Jóvenes (`edcquilpue`), Escuela dominical, Alabanza, Damas y Varones, con el contenido por completar. Cómo funcionan y cómo crear una nueva: [`ministerios/README.md`](ministerios/README.md).
+
+## Pedido de oración
+Formulario en la sección Contacto de la portada: arma un mensaje de WhatsApp al +56 9 4442 0180 con el nombre (opcional), la petición y si quiere que lo contacten. No se guarda nada en el sitio; por eso `_headers` permite `form-action https://wa.me`. Sin JavaScript envía solo la petición.
 
 ## Diseño (rama `dev`, 2026-09-24)
 Tradicional y sobrio, con la paleta del templo (`templo.jpg`): bordó de las sillas y el altar (`#7d1a28`), dorado de la

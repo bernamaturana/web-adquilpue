@@ -1,0 +1,10 @@
+/* Escuela dominical: colores propios (verde bosque y amarillo trigo). Solo se redefinen los colores con función de /styles.css; el resto
+   del diseño es el del sitio. Revisar el contraste al cambiarlos (texto normal ≥ 4.5:1 sobre el marfil #faf7f1). */
+:root {
+  --accent: #2b6134;
+  --accent-deep: #1c4322;
+  --on-accent: #eef6ec;
+  --highlight: #8a5a12;
+  --highlight-light: #f5d27a;
+  --highlight-hover: #f8dd98;
+}

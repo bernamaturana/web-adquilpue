@@ -219,35 +219,30 @@
         </header>
 
         <div class="ministries">
-          <article class="ministry">
-            <h3>Escuela dominical</h3>
+          <article class="ministry has-page">
+            <h3><a href="/ministerios/escuela-dominical/">Escuela dominical</a></h3>
             <p>Estudio de la Biblia por edades, para niños, jóvenes y adultos.</p>
-            <p class="when">Domingo · 10:30</p>
+            <p class="when">Domingo · 10:30 <span class="more" aria-hidden="true">Conoce más →</span></p>
           </article>
-          <article class="ministry">
-            <h3>Alabanza</h3>
+          <article class="ministry has-page">
+            <h3><a href="/ministerios/alabanza/">Alabanza</a></h3>
             <p>Músicos y cantantes que guían a la iglesia en la adoración cada domingo.</p>
-            <p class="when">Cultos del domingo</p>
+            <p class="when">Cultos del domingo <span class="more" aria-hidden="true">Conoce más →</span></p>
           </article>
           <article class="ministry has-page">
             <h3><a href="/ministerios/edcquilpue/">Jóvenes</a></h3>
             <p>Un espacio para que los jóvenes crezcan en la fe, compartan y sirvan.</p>
             <p class="when">Sábado · 18:00 <span class="more" aria-hidden="true">Conoce más →</span></p>
           </article>
-          <article class="ministry">
-            <h3>Damas</h3>
+          <article class="ministry has-page">
+            <h3><a href="/ministerios/damas/">Damas</a></h3>
             <p>Mujeres que se reúnen para orar, estudiar la Palabra y acompañarse.</p>
-            <p class="when">Jueves · 16:00</p>
+            <p class="when">Jueves · 16:00 <span class="more" aria-hidden="true">Conoce más →</span></p>
           </article>
-          <article class="ministry">
-            <h3>Varones</h3>
+          <article class="ministry has-page">
+            <h3><a href="/ministerios/varones/">Varones</a></h3>
             <p>Hombres comprometidos con su fe, su familia y la iglesia.</p>
-            <p class="when">Sábado · 18:00</p>
-          </article>
-          <article class="ministry">
-            <h3>Oración</h3>
-            <p>Nos reunimos a orar por la iglesia, las familias y la ciudad.</p>
-            <p class="when">Martes · 19:00</p>
+            <p class="when">Sábado · 18:00 <span class="more" aria-hidden="true">Conoce más →</span></p>
           </article>
         </div>
       </div>
@@ -278,12 +273,19 @@
           <p class="kicker">Estamos para ti</p>
           <h2>¿Necesitas <em>oración</em>?</h2>
           <p>Escríbenos con confianza: oraremos por ti y, si quieres, un hermano de la iglesia se pondrá en contacto contigo.</p>
+          <p class="contact-note">También los martes a las 19:00 nos reunimos a orar por la iglesia, las familias y la ciudad.</p>
         </div>
-        <div class="contact-actions">
-          <a class="btn btn-highlight" href="https://wa.me/56944420180?text=Hola%2C%20quisiera%20pedir%20oraci%C3%B3n%20por%3A%20" target="_blank" rel="noopener">Pedir oración por WhatsApp</a>
-          <a class="btn btn-outline-light" href="mailto:adquilpue@gmail.com?subject=Contacto%20desde%20la%20web">Escribir un correo</a>
-          <p class="contact-note">WhatsApp <a href="https://wa.me/56944420180" target="_blank" rel="noopener">+56 9 4442 0180</a> · <a href="mailto:adquilpue@gmail.com">adquilpue@gmail.com</a></p>
-        </div>
+        <!-- Pedido de oración: arma un mensaje de WhatsApp al número de la iglesia (no se guarda nada en esta página).
+             Sin JavaScript, envía solo el texto de la petición (campo «text», el que entiende wa.me). -->
+        <form class="prayer-form" action="https://wa.me/56944420180" method="get" target="_blank" rel="noopener">
+          <label for="oracion-nombre">Tu nombre <span>(opcional)</span></label>
+          <input id="oracion-nombre" type="text" autocomplete="given-name" maxlength="60">
+          <label for="oracion-texto">¿Por qué quieres que oremos?</label>
+          <textarea id="oracion-texto" name="text" rows="4" maxlength="1000" required></textarea>
+          <label class="check"><input id="oracion-contacto" type="checkbox"> Quiero que alguien de la iglesia me contacte</label>
+          <button class="btn btn-highlight" type="submit">Enviar por WhatsApp</button>
+          <p class="contact-note">Se abre WhatsApp con tu mensaje listo para enviar al +56 9 4442 0180. ¿Prefieres correo? <a href="mailto:adquilpue@gmail.com?subject=Pedido%20de%20oraci%C3%B3n">adquilpue@gmail.com</a></p>
+        </form>
       </div>
     </section>
 

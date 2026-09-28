@@ -287,6 +287,18 @@ h1 em, h2 em { font-style: italic; color: var(--accent); }
 .contact-note { font-size: .9rem; }
 @media (max-width: 860px) { .contact { grid-template-columns: 1fr; } }
 
+/* Pedido de oración (sobre el color principal) */
+.prayer-form { display: grid; gap: .45rem; }
+.prayer-form label { font-weight: 600; font-size: .95rem; }
+.prayer-form label span { font-weight: 400; opacity: .8; }
+.prayer-form input[type="text"], .prayer-form textarea {
+  width: 100%; font: inherit; color: var(--ink); background: var(--paper); border: 1px solid transparent; border-radius: 3px;
+  padding: .65rem .8rem; margin-bottom: .5rem;
+}
+.prayer-form textarea { resize: vertical; min-height: 6.5rem; }
+.prayer-form .check { display: flex; align-items: center; gap: .6rem; font-weight: 400; margin-bottom: .6rem; cursor: pointer; }
+.prayer-form .check input { width: 1.1rem; height: 1.1rem; accent-color: var(--highlight-light); }
+
 /* Ubicación */
 .location { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .location-info > * + * { margin-top: 1rem; }
