@@ -33,9 +33,10 @@ Flujo:
    `ministerios/ministerio.css`, `app.js`, `index.html`), avisarlo en el pull request: afecta a todas las páginas.
 3. Commits pequeños y `git push`. Abrir un **pull request hacia `dev`** en GitHub; Bernabé lo revisa y lo junta.
 4. Para traer lo nuevo de `dev` a la rama: `git merge dev`.
-5. Preparar una publicación: Bernabé pasa `dev` a `pruebas` (`git checkout pruebas && git merge dev && git push`)
-   y se revisa ahí (computador y celular).
-6. Publicar: pasar `pruebas` a `main` (`git checkout main && git merge pruebas && git push`).
+5. Preparar una publicación: Bernabé abre un pull request `dev → pruebas`
+   (`gh pr create --base pruebas --head dev`), lo junta y lo revisa en local (`git checkout pruebas && git pull && ./run.sh`),
+   en computador y celular.
+6. Publicar: pull request `pruebas → main` (`gh pr create --base main --head pruebas`) y juntarlo; Cloudflare publica.
    `main` solo recibe desde `pruebas`; si algo falla en `pruebas`, se corrige en `dev` y se vuelve a pasar.
 
 **Dónde se ve cada rama:** `main` se publica en adquilpue.cl. `pruebas` es **solo local** (`git checkout pruebas && ./run.sh`):
