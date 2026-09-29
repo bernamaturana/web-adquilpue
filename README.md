@@ -42,11 +42,20 @@ Flujo:
 está excluida de las vistas previas de Cloudflare Pages (Settings → Builds → Branch control). `dev` y las ramas de
 trabajo también se revisan en local.
 
-**Pull requests** (carpeta `.github/`): todo PR pide la revisión de Bernabé (`CODEOWNERS`), trae una lista de
-revisión (`pull_request_template.md`) y un check revisa que vaya a la rama correcta (`workflows/ramas.yml`).
-En un repo privado con el plan gratis, GitHub no permite **exigir** estas reglas (protección de ramas): funcionan como
-aviso. Para exigirlas hay que pasar a GitHub Pro o hacer público el repositorio, y luego crear las reglas en
-Settings → Rules: `main`, `pruebas` y `dev` sin push directo, con PR aprobado por Bernabé y el check «Rama de destino».
+**Reglas en GitHub** (repositorio público desde el 28/9; Settings → Rules):
+
+| Rama | Regla |
+|---|---|
+| `main`, `pruebas` | No se borran ni se reescriben. Solo cambian por **pull request** de Bernabé (`dev → pruebas`, `pruebas → main`), con el check «Rama de destino» en verde |
+| `dev` | No se borra ni se reescribe. Los demás entran por **pull request aprobado por Bernabé** (`CODEOWNERS`), con el check en verde y las conversaciones resueltas. Bernabé puede hacer push directo |
+| Ramas de trabajo | Libres para quien trabaja en ellas |
+
+- Los pull request se juntan con **merge commit** (squash y rebase están desactivados), para que `dev`, `pruebas` y `main`
+  sigan siendo la misma historia.
+- Cada pull request trae la lista de revisión de `.github/pull_request_template.md`; el check es `.github/workflows/ramas.yml`.
+- Las ramas de trabajo no se borran al juntarlas: se reutilizan (`git merge dev` para ponerlas al día).
+- **Repositorio público:** cualquiera puede verlo, no modificarlo. Las fotos de personas se suben solo con permiso
+  (de sus padres si son menores): lo que se sube queda en el historial aunque después se borre.
 
 ## Páginas de ministerio
 En `ministerios/`: cada ministerio tiene su carpeta con su página, sus colores y sus fotos, sobre el mismo diseño del
