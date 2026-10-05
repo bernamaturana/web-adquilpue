@@ -1,5 +1,7 @@
 # Páginas de ministerio
 
+> ¿Vas a trabajar la página de tu ministerio? Empieza por la **[guía paso a paso](GUIA.md)**.
+
 Cada ministerio puede tener su propia página en `/ministerios/NOMBRE/`, con galería, redes, actividades y líderes.
 Todas comparten el **mismo lenguaje visual** del sitio y cada una tiene **sus propios colores**.
 
